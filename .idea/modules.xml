@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AndroidLib/AndroidLib.iml" filepath="$PROJECT_DIR$/AndroidLib/AndroidLib.iml" group="Puppet/AndroidLib" />
+      <module fileurl="file://$PROJECT_DIR$/BaseLib/BaseLib.iml" filepath="$PROJECT_DIR$/BaseLib/BaseLib.iml" group="Puppet/BaseLib" />
+      <module fileurl="file://$PROJECT_DIR$/MvpLib/MvpLib.iml" filepath="$PROJECT_DIR$/MvpLib/MvpLib.iml" group="Puppet/MvpLib" />
+      <module fileurl="file://$PROJECT_DIR$/NetLib/NetLib.iml" filepath="$PROJECT_DIR$/NetLib/NetLib.iml" group="Puppet/NetLib" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Puppet.iml" filepath="$PROJECT_DIR$/.idea/Puppet.iml" group="Puppet" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Puppet/app" />
+    </modules>
+  </component>
+</project>
