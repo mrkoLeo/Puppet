@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference
  *
  * @author:Created by Mrko on 2019-08-10.
  * @email:mrko0630@163.com
- * @description:
+ * @description: Mvp 基础框架
  * @since: 1.0
  */
 interface BaseView {

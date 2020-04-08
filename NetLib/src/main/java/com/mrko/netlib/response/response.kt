@@ -18,7 +18,7 @@ package com.mrko.netlib.response
  *
  * @author:Created by Mrko on 2019-08-18.
  * @email:mrko0630@163.com
- * @description:
+ * @description: 统一封装的Response基类
  * @since: 1.0
  */
 interface IResponse {

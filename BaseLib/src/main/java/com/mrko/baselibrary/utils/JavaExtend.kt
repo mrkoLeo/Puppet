@@ -18,7 +18,7 @@ package com.mrko.baselibrary.utils
  *
  * @author:Created by Mrko on 2020-01-15.
  * @email:mrko0630@163.com
- * @description:
+ * @description: Java 的扩展类
  * @since: 1.0
  */
 

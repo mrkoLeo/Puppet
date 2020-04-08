@@ -23,7 +23,7 @@ import retrofit2.http.Path
  *
  * @author:Created by Mrko on 2019-08-17.
  * @email:mrko0630@163.com
- * @description:
+ * @description: Retrofit 接口管理类
  * @since: 1.0
  */
 

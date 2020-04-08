@@ -34,7 +34,7 @@ import java.util.*
  *
  * @author:Created by Mrko on 2019-08-07.
  * @email:mrko0630@163.com
- * @description:
+ * @description: Application
  * @since: 1.0
  */
 class App : Application(), Application.ActivityLifecycleCallbacks, AppCallBack {

@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.fragment_webview.*
  *
  * @author:Created by Mrko on 2019-09-21.
  * @email:mrko0630@163.com
- * @description:
+ * @description: WebView功能管理类
  * @since: 1.0
  */
 class WebViewFragment : BaseFragment() {

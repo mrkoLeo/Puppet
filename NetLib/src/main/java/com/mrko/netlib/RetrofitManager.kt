@@ -5,7 +5,6 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import java.util.*
 import java.util.concurrent.TimeUnit
 
 
@@ -27,7 +26,7 @@ import java.util.concurrent.TimeUnit
  *
  * @author:Created by Mrko on 2019-08-17.
  * @email:mrko0630@163.com
- * @description: RetrofitManger
+ * @description: RetrofitManger 管理网络请求
  * @since: 1.0
  */
 class RetrofitManager {

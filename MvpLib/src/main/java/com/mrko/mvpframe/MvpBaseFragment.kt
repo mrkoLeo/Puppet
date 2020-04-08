@@ -22,7 +22,7 @@ import java.lang.reflect.ParameterizedType
  *
  * @author:Created by Mrko on 2019-08-10.
  * @email:mrko0630@163.com
- * @description:
+ * @description: Mvp Fragment
  * @since: 1.0
  */
 abstract class MvpBaseFragment<T : BasePresent> : BaseFragment() {

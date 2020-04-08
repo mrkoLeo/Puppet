@@ -29,7 +29,7 @@ import com.mrko.pet.utils.ProgressDialogHelper
  *
  * @author:Created by Mrko on 2019-08-10.
  * @email:mrko0630@163.com
- * @description:
+ * @description: BaseFragment
  * @since: 1.0
  */
 abstract class BaseFragment : Fragment(), BaseView, IActivityBackPressed {

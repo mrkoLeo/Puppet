@@ -29,7 +29,7 @@ import me.jessyan.autosize.AutoSizeConfig
  *
  * @author:Created by Mrko on 2019-08-05.
  * @email:mrko0630@163.com
- * @description:
+ * @description: BaseActivity
  * @since: 1.0
  */
 abstract class BaseActivity : AppCompatActivity(), BaseView {

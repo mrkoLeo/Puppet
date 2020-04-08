@@ -1,11 +1,7 @@
-package com.mrko.pet.utils
+package com.mrko.baselibrary.gson.adapter
 
-import android.app.Activity
-import android.app.ProgressDialog
-import android.widget.Toast
-import androidx.core.content.ContextCompat
-import com.mrko.baselibrary.R
-import java.lang.ref.WeakReference
+import com.google.gson.*
+import java.lang.reflect.Type
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -23,58 +19,29 @@ import java.lang.ref.WeakReference
  * │Ctrl│Ray │Alt │         Space         │ Alt│code│fuck│Ctrl││ ← │ ↓ │ → ││   0   │ . │←─┘│
  * └────┴────┴────┴───────────────────────┴────┴────┴────┴────┘└───┴───┴───┘└───────┴───┴───┘
  *
- * @author:Created by Mrko on 2019-08-11.
+ * @author:Created by Mrko on 2020/4/8.
  * @email:mrko0630@163.com
- * @description: 统一封装的转圈dialog
+ * @description: Gson Integer Factory adapter
  * @since: 1.0
  */
-class ProgressDialogHelper(context: Activity) {
-
-    private lateinit var progressDialog: ProgressDialog
-    private val reference: WeakReference<Activity> = WeakReference(context)
-
-    fun showProgress(
-        message: CharSequence = "请稍等",
-        title: CharSequence = "",
-        cancelable: Boolean = true
-    ) {
-        var message = message
-        val context = reference.get() ?: return
-
-        if (!::progressDialog.isInitialized) {
-            message = SpanUtils.setForeground(
-                message.toString(),
-                message.toString(),
-                ContextCompat.getColor(context, R.color.material_grey_600)
-            )
-            progressDialog = ProgressDialog(context)
-            progressDialog.setMessage(message)
-            progressDialog.setTitle(title)
-            progressDialog.setCancelable(cancelable)
-            progressDialog.isIndeterminate = true
-        }
-        progressDialog.setCancelable(cancelable)
-        if (!progressDialog.isShowing && !context.isFinishing) {
-            progressDialog.show()
+class IntegerDefaultAdapter : JsonDeserializer<Int>, JsonSerializer<Int> {
+    override fun deserialize(
+        json: JsonElement?,
+        typeOfT: Type?,
+        context: JsonDeserializationContext?
+    ): Int {
+        return try {
+            Integer.valueOf(json?.asInt ?: 0)
+        } catch (e: NumberFormatException) {
+            throw JsonSyntaxException(e)
         }
     }
 
-    fun hideProgress() {
-        val context = reference.get() ?: return
-        if (::progressDialog.isInitialized && !context.isFinishing && progressDialog.isShowing) {
-            progressDialog.dismiss()
-        }
-    }
-
-    fun showMessage(msg: CharSequence) {
-        val context = reference.get() ?: return
-        Toast.makeText(context, msg, Toast.LENGTH_LONG).show()
-    }
-
-    fun release() {
-        if (::progressDialog.isInitialized) {
-            progressDialog.dismiss()
-            reference.clear()
-        }
+    override fun serialize(
+        src: Int?,
+        typeOfSrc: Type?,
+        context: JsonSerializationContext?
+    ): JsonElement {
+        return JsonPrimitive(src)
     }
 }

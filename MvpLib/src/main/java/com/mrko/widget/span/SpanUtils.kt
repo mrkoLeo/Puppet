@@ -24,7 +24,7 @@ import android.text.style.StyleSpan
  *
  * @author:Created by Mrko on 2019-08-11.
  * @email:mrko0630@163.com
- * @description:
+ * @description: 用于处理text 富文本的工具类
  * @since: 1.0
  */
 class SpanUtils {

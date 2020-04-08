@@ -1,7 +1,5 @@
 package com.mrko.netlib;
 
-import java.util.HashMap;
-
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
  * │Esc│ │ F1│ F2│ F3│ F4│ │ F5│ F6│ F7│ F8│ │ F9│F10│F11│F12│ │P/S│S L│P/B│ ┌┐    ┌┐    ┌┐
@@ -20,7 +18,7 @@ import java.util.HashMap;
  *
  * @author:Created by Mrko on 2019-09-09.
  * @email:mrko0630@163.com
- * @description:
+ * @description: 简单的测试java方法
  * @since: 1.0
  */
 
