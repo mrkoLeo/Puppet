@@ -38,17 +38,17 @@ class ProgressDialogHelper(context: Activity) {
         title: CharSequence = "",
         cancelable: Boolean = true
     ) {
-        var message = message
+        var temp = message
         val context = reference.get() ?: return
 
         if (!::progressDialog.isInitialized) {
-            message = SpanUtils.setForeground(
-                message.toString(),
-                message.toString(),
+            temp = SpanUtils.setForeground(
+                temp.toString(),
+                temp.toString(),
                 ContextCompat.getColor(context, R.color.material_grey_600)
             )
             progressDialog = ProgressDialog(context)
-            progressDialog.setMessage(message)
+            progressDialog.setMessage(temp)
             progressDialog.setTitle(title)
             progressDialog.setCancelable(cancelable)
             progressDialog.isIndeterminate = true

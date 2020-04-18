@@ -1,7 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Puppet</string>
-    <string name="aidl">AIDL</string>
-    <string name="submit">submit</string>
+    <string name="app_name">玩偶</string>
+    <string name="aidl">进程调用</string>
+    <string name="submit">提交</string>
     <string name="calculate_add_symbol">+</string>
     <string name="calculate_subtract_symbol">-</string>
     <string name="calculate_multiplication">*</string>

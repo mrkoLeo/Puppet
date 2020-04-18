@@ -1,7 +1,7 @@
-package com.mrko.mvpframe
+package com.mrko.pet.aidl
 
-import android.os.Bundle
-import java.lang.reflect.ParameterizedType
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 
 /**
  * ┌───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┬───┐ ┌───┬───┬───┐
@@ -19,70 +19,20 @@ import java.lang.reflect.ParameterizedType
  * │Ctrl│Ray │Alt │         Space         │ Alt│code│fuck│Ctrl││ ← │ ↓ │ → ││   0   │ . │←─┘│
  * └────┴────┴────┴───────────────────────┴────┴────┴────┴────┘└───┴───┴───┘└───────┴───┴───┘
  *
- * @author:Created by Mrko on 2019-08-10.
+ * @author:Created by Mrko on 2020/4/18.
  * @email:mrko0630@163.com
- * @description: MvpActivity
+ * @description: AIDL交互的计算类
  * @since: 1.0
  */
-abstract class MvpBaseActivity<T : BasePresent> : BaseActivity() {
-    private lateinit var mPresenter: T
-
-    override fun onCreateAfter(savedInstanceState: Bundle?) {
-        createPresenter()
+class CalculateViewModel : ViewModel() {
+    val value1: MutableLiveData<Number> by lazy {
+        MutableLiveData<Number>()
     }
-
-    private fun createPresenter() {
-        val t: Any = getT(this, 0)
-        try {
-            mPresenter = t as T
-            mPresenter.attach(this)
-        } catch (e: Exception) {
-        }
+    val value2: MutableLiveData<Number> by lazy {
+        MutableLiveData<Number>()
     }
-
-    fun getPresenter(): T {
-        if (this::mPresenter.isLateinit) {
-            return mPresenter
-        }
-        throw ClassNotFoundException("Presenter class not found")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (::mPresenter.isInitialized) {
-            try {
-                mPresenter.detach()
-            } catch (e: UninitializedPropertyAccessException) {
-                e.printStackTrace()
-            }
-        }
-
-    }
-
-    companion object {
-        /**
-         * 实例presenter
-         * @param o
-         * @param i
-         * @param <T>
-         * @return
-        </T> */
-        private fun <T> getT(o: Any, i: Int): T {
-            try {
-                return ((o.javaClass
-                    .genericSuperclass as ParameterizedType).actualTypeArguments[i] as Class<T>)
-                    .newInstance()
-            } catch (e: InstantiationException) {
-                e.printStackTrace()
-            } catch (e: IllegalAccessException) {
-                e.printStackTrace()
-            } catch (e: ClassCastException) {
-                e.printStackTrace()
-            }
-            throw RuntimeException("can not create presenter!")
-        }
+    val total: MutableLiveData<Number> by lazy {
+        MutableLiveData<Number>()
     }
 }
-
-
 

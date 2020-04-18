@@ -37,8 +37,6 @@ abstract class BaseFragment : Fragment(), BaseView, IActivityBackPressed {
     protected var mContext: Context? = null
     private val mStateSaveIsHidden = "STATE_SAVE_IS_HIDDEN"
     protected var progressDialogHelper: ProgressDialogHelper? = null
-    protected var isViewInitiated: Boolean = false
-    protected var isDataInitiated: Boolean = false
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -59,7 +57,6 @@ abstract class BaseFragment : Fragment(), BaseView, IActivityBackPressed {
             }
             ft.commit()
         }
-        isViewInitiated = true
         "onCreate $savedInstanceState".logi()
     }
 
@@ -83,7 +80,6 @@ abstract class BaseFragment : Fragment(), BaseView, IActivityBackPressed {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         "onActivityCreated $savedInstanceState".logi()
-        isLazyLoaded()
     }
 
 
@@ -128,15 +124,6 @@ abstract class BaseFragment : Fragment(), BaseView, IActivityBackPressed {
         "onSaveInstanceState".logi()
     }
 
-
-    protected fun isLazyLoaded(): Boolean {
-        if (userVisibleHint && isViewInitiated && !isDataInitiated) {
-            lazyLoad()
-            isDataInitiated = true
-            return true
-        }
-        return false
-    }
 
     @LayoutRes
     abstract fun getLayoutId(): Int

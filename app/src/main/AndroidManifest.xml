@@ -15,10 +15,11 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
         <!-- 如果您项目中的所有页面都只需要以高或宽中的一个作为基准进行适配的话, 那就只需要填写高或宽中的一个设计图尺寸即可 -->
         <meta-data
@@ -35,6 +36,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".aidl.AidlActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <service
+            android:name=".aidl.MyAidlService"
+            android:process="com.mrko.pet" />
     </application>
 
 </manifest>

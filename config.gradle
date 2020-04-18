@@ -1,0 +1,62 @@
+// 公共版本配置
+ext {
+    // android 基础配置
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0.0",
+    ]
+
+    dependencies = [
+            // --------- 原生集成兼容库 ---------
+            appcompat              : 'androidx.appcompat:appcompat:1.1.0',
+            kotlin_stdlib_jdk7     : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            core_ktx               : 'androidx.core:core-ktx:1.2.0',
+            constraintlayout       : 'androidx.constraintlayout:constraintlayout:1.1.3',
+            material               : 'com.google.android.material:material:1.2.0-alpha05',
+            coordinatorlayout      : 'androidx.coordinatorlayout:coordinatorlayout:1.1.0',
+
+
+            // --------- 原生集成测试库 ---------
+            junit                  : 'junit:junit:4.13',
+            runner                 : 'androidx.test:runner:1.2.0',
+            espresso_core          : 'androidx.test.espresso:espresso-core:3.2.0',
+
+
+            // --------- logger ---------
+            logger                 : 'com.orhanobut:logger:2.2.0',
+
+
+            // --------- 屏幕适配库 ---------
+            autosize               : 'me.jessyan:autosize:1.1.2',
+
+
+            // --------- 网络库 ---------
+            retrofit               : 'com.squareup.retrofit2:retrofit:2.8.1',
+            okhttp                 : 'com.squareup.okhttp3:okhttp:4.4.1',
+            adapter_rxjava2                : 'com.squareup.retrofit2:adapter-rxjava2:2.8.1',
+            converter_gson         : 'com.squareup.retrofit2:converter-gson:2.8.1',
+
+
+            // --------- Rx异步库 ---------
+            rxjava2                 : 'io.reactivex.rxjava2:rxjava:2.2.19',
+            rxandroid2              : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+
+
+            // --------- Gson库 ---------
+            gson                   : 'com.google.code.gson:gson:2.8.6',
+
+
+            // --------- Kotlin 协程库 ---------
+            kotlinx_coroutines_core: 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1',
+
+
+            // --------- jsbridge ---------
+            jsbridge               : 'com.github.lzyzsd:jsbridge:1.0.4',
+    ]
+
+
+}

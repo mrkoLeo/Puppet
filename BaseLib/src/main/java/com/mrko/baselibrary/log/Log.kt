@@ -137,7 +137,7 @@ class Logger {
 /**
  * 便捷打印日志
  */
-fun <T : String> T.logd(@Nullable vararg args: Any) {
+fun String.logd(@Nullable vararg args: Any) {
     d(this, *args)
 }
 
@@ -145,35 +145,35 @@ fun Any.logd() {
     d(this)
 }
 
-fun <T : String> T.loge(@Nullable vararg args: Any) {
+fun String.loge(@Nullable vararg args: Any) {
     e(this, *args)
 }
 
-fun <T : String> T.logd(@Nullable throwable: Throwable, @Nullable vararg args: Any) {
+fun String.logd(@Nullable throwable: Throwable, @Nullable vararg args: Any) {
     e(throwable, this, *args)
 }
 
-fun <T : String> T.logi(@Nullable vararg args: Any) {
+fun String.logi(@Nullable vararg args: Any) {
     i(this, *args)
 }
 
-fun <T : String> T.logv(@Nullable vararg args: Any) {
+fun String.logv(@Nullable vararg args: Any) {
     i(this, *args)
 }
 
-fun <T : String> T.logw(@Nullable vararg args: Any) {
+fun String.logw(@Nullable vararg args: Any) {
     w(this, *args)
 }
 
-fun <T : String> T.logwtf(@Nullable vararg args: Any) {
+fun String.logwtf(@Nullable vararg args: Any) {
     wtf(this, *args)
 }
 
-fun <T : String> T.logjson() {
+fun String.logjson() {
     json(this)
 }
 
-fun <T : String> T.logxml() {
+fun String.logxml() {
     xml(this)
 }
 

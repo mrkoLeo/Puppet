@@ -1,1 +1,13 @@
 # Created by .ignore support plugin (hsz.mobi)
+/apk/
+.gradle/5.4.1/vcsMetadata-1/
+.gradle/5.6.4/
+.idea/dictionaries/
+.idea/libraries/Gradle__androidx_databinding_databinding_adapters_3_6_2_aar.xml
+.idea/libraries/Gradle__androidx_databinding_databinding_common_3_6_2_jar.xml
+.idea/libraries/Gradle__androidx_databinding_databinding_runtime_3_6_2_aar.xml
+.idea/libraries/Gradle__androidx_databinding_viewbinding_3_6_2_aar.xml
+build/
+keystore.properties
+.gradle/
+

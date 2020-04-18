@@ -1,0 +1,6 @@
+/**
+ * 存放公共依赖的Plugin
+ */
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
