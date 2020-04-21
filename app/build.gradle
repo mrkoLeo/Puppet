@@ -86,14 +86,16 @@ android {
      * 更换打包输出的包名
      */
     applicationVariants.all { variant ->
-        variant.getPackageApplicationProvider().get().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
-        variant.getPackageApplicationProvider().get().outputScope.apkDatas.forEach { apkData ->
-            apkData.outputFileName = ((project.name != "app") ? project.name : rootProject.name) + "_" +
-                    variant.flavorName + "_" +
-                    variant.buildType.name + "_" +
-                    variant.versionName + "_" +
-                    releaseTime() +
-                    ".apk"
+        if (variant.buildType.name == "release") {
+            variant.getPackageApplicationProvider().get().outputDirectory = new File(project.rootDir.absolutePath + "/apk")
+            variant.getPackageApplicationProvider().get().outputScope.apkDatas.forEach { apkData ->
+                apkData.outputFileName = ((project.name != "app") ? project.name : rootProject.name) + "_" +
+                        variant.flavorName + "_" +
+                        variant.buildType.name + "_" +
+                        variant.versionName + "_" +
+                        releaseTime() +
+                        ".apk"
+            }
         }
     }
 
